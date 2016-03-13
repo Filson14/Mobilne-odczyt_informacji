@@ -68,4 +68,8 @@ public class MainActivity extends AppCompatActivity {
         // unregister listener
         super.onPause();
     }
+
+    public void setTimeInterval(int interval) {
+
+    }
 }
