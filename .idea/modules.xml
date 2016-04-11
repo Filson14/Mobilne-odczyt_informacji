@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FilipPasternak-sensors.iml" filepath="$PROJECT_DIR$/FilipPasternak-sensors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mobilne-odczyt_informacji.iml" filepath="$PROJECT_DIR$/Mobilne-odczyt_informacji.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

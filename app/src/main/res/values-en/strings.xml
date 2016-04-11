@@ -1,8 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FilipPasternak-sensors</string>
     <string name="sensors">Sensors</string>
-    <string-array name="navigationMenuOptions">
-        <item>text_string</item>
-    </string-array>
+    <string name="phone">Phone</string>
     <string name="aboutAuthor">About author</string>
 </resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FilipPasternak-sensors</string>
+    <string name="sensors">Sensory</string>
+    <string name="phone">Telefon</string>
+    <string name="aboutAuthor">O autorze</string>
+</resources>

@@ -7,14 +7,12 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 
 /**
  * Created by Filson on 2016-03-12.
  */
-public class DetailsActivity extends AppCompatActivity implements SensorEventListener {
+public class SensorDetailsActivity extends BaseActivity implements SensorEventListener {
 
     private int UPDATE_INTERVAL = 300;
     private Sensor sensor;
@@ -34,7 +32,7 @@ public class DetailsActivity extends AppCompatActivity implements SensorEventLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details);
+        super.applyView(this, R.layout.sensor_details);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
