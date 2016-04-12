@@ -18,6 +18,9 @@
         <activity android:name=".SensorDetailsActivity"></activity>
         <activity android:name=".SensorsListActivity"></activity>
         <activity android:name=".device.SmsActivity"></activity>
+        <activity android:name=".device.CameraActivity"></activity>
+        <activity android:name=".WebViewActivity"></activity>
+        <activity android:name=".device.DeviceInfo"></activity>
     </application>
 
     <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
