@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.mobilne.filson.filippasternak_sensors.BaseActivity;
 import com.mobilne.filson.filippasternak_sensors.R;
 
+import java.util.ArrayList;
+
 /**
  * Created by Filson on 2016-04-12.
  */
@@ -41,7 +43,12 @@ public class SmsActivity extends BaseActivity {
     private void sendMessage(String number, String message) {
         try {
             SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(number, null, message, null, null);
+            ArrayList<String> messageParts = smsManager.divideMessage(message);
+
+            for(int i = 0; i < messageParts.size(); i++) {
+                smsManager.sendTextMessage(number, null, messageParts.get(i), null, null);
+            }
+
             Toast.makeText(getApplicationContext(), "SMS sent.", Toast.LENGTH_LONG).show();
             phoneNoEdit.setText("");
             messageEdit.setText("");

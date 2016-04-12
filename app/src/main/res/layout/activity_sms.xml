@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +18,11 @@
         android:inputType="phone"
         android:ems="10"
         android:id="@+id/phoneNoField"
-        android:layout_marginBottom="18dp"/>
+        android:layout_marginBottom="18dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@drawable/field_border"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +38,10 @@
         android:ems="10"
         android:id="@+id/messageField"
         android:layout_weight="0.57"
-        android:gravity="top" />
+        android:gravity="top"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@drawable/field_border"/>
 
     <Button
         android:layout_width="wrap_content"

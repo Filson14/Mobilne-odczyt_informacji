@@ -27,15 +27,11 @@ public class SideMenuAdapter extends ArrayAdapter<MenuItem> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
-        // 1. Create inflater
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        // 2. Get rowView from inflater
-
         View rowView = null;
-        if(!itemsList.get(position).isHeader()){
+        if (!itemsList.get(position).isHeader()) {
             rowView = inflater.inflate(R.layout.menu_item, parent, false);
 
 
@@ -44,15 +40,12 @@ public class SideMenuAdapter extends ArrayAdapter<MenuItem> {
 
             imgView.setImageResource(itemsList.get(position).getIcon());
             titleView.setText(itemsList.get(position).getTitle());
-        }
-        else{
+        } else {
             rowView = inflater.inflate(R.layout.menu_header, parent, false);
             TextView titleView = (TextView) rowView.findViewById(R.id.header);
             titleView.setText(itemsList.get(position).getTitle());
 
         }
-
-        // 5. retrn rowView
         return rowView;
     }
 }

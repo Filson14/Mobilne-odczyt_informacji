@@ -30,8 +30,6 @@ public class SensorsListActivity extends BaseActivity {
         super.applyView(this, R.layout.sensors_list);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-
-
         final List<Sensor> deviceSensors = sensorManager.getSensorList(Sensor.TYPE_ALL);
         sensorsList = new ArrayList<>();
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, sensorsList);
@@ -61,16 +59,10 @@ public class SensorsListActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // register this class as a listener for the Pressure Sensor
     }
 
     @Override
     protected void onPause() {
-        // unregister listener
         super.onPause();
-    }
-
-    public void setTimeInterval(int interval) {
-
     }
 }
