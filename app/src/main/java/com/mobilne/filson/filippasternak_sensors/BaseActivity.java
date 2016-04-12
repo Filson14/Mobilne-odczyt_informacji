@@ -3,22 +3,17 @@ package com.mobilne.filson.filippasternak_sensors;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.hardware.Sensor;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.mobilne.filson.filippasternak_sensors.device.SmsActivity;
+
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Created by Filson on 2016-04-11.
@@ -34,6 +29,9 @@ public class BaseActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.drawer_layout);
+
+        /*Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);*/
 
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         fillNavigationMenu();
@@ -52,13 +50,16 @@ public class BaseActivity extends Activity {
                 System.out.println("Title: " + selectedItem.getTitle());
                 Intent intent;
                 if(!selectedItem.isHeader()) {
-                    if (position != 1) {
-                        intent = new Intent(BaseActivity.this, MainActivity.class);
-                    } else {
+                    if (selectedItem.getId() == "sensors") {
                         intent = new Intent(BaseActivity.this, SensorsListActivity.class);
+                    } else if(selectedItem.getId() == "sms") {
+                        intent = new Intent(BaseActivity.this, SmsActivity.class);
+                    } else {
+                        intent = new Intent(BaseActivity.this, MainActivity.class);
                     }
 
                     startActivity(intent);
+                    mDrawer.closeDrawers();
                 }
             }
         });
@@ -75,10 +76,11 @@ public class BaseActivity extends Activity {
     private void fillNavigationMenu() {
         listItems = new ArrayList<MenuItem>();
         listItems.add(new MenuItem("Choose option"));
-        listItems.add(new MenuItem(R.drawable.ic_action_phone, getResources().getString(R.string.sensors)));
-        listItems.add(new MenuItem(R.drawable.ic_action_phone, getResources().getString(R.string.phone)));
+        listItems.add(new MenuItem("sensors", R.drawable.ic_action_phone, getResources().getString(R.string.sensors)));
+        listItems.add(new MenuItem("Device"));
+        listItems.add(new MenuItem("sms", R.drawable.ic_action_phone, "SMS"));
         listItems.add(new MenuItem("About"));
-        listItems.add(new MenuItem(R.drawable.ic_action_phone, getResources().getString(R.string.aboutAuthor)));
+        listItems.add(new MenuItem("author", R.drawable.ic_action_phone, getResources().getString(R.string.aboutAuthor)));
     }
 
 

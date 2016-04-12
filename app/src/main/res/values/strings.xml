@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">FilipPasternak-sensors</string>
     <string name="sensors">Sensors</string>
-    <string-array name="navigationMenuOptions">
-        <item>text_string</item>
-    </string-array>
     <string name="aboutAuthor">About author</string>
+    <string name="send">Send</string>
+    <string name="phoneNo">Phone number</string>
+    <string name="message">Message</string>
 </resources>

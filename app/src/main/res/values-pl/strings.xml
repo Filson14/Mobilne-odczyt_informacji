@@ -4,4 +4,7 @@
     <string name="sensors">Sensory</string>
     <string name="phone">Telefon</string>
     <string name="aboutAuthor">O autorze</string>
+    <string name="send">Wyślij</string>
+    <string name="phoneNo">Numer telefonu</string>
+    <string name="message">Wiadomość</string>
 </resources>

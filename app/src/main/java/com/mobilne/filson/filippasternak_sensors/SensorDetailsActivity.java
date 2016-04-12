@@ -102,6 +102,9 @@ public class SensorDetailsActivity extends BaseActivity implements SensorEventLi
             case Sensor.TYPE_ROTATION_VECTOR:
                 onRotationVectorChange(event);
                 break;
+            default:
+                onThreeAxisSensorChange(event);
+                break;
         }
 
     }
