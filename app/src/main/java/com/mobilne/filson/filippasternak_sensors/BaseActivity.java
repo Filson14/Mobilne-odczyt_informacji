@@ -11,6 +11,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.mobilne.filson.filippasternak_sensors.about.AuthorActivity;
 import com.mobilne.filson.filippasternak_sensors.device.CameraActivity;
 import com.mobilne.filson.filippasternak_sensors.device.DeviceInfo;
 import com.mobilne.filson.filippasternak_sensors.device.SmsActivity;
@@ -66,6 +67,9 @@ public class BaseActivity extends Activity {
                         case "phoneInfo":
                             intent = new Intent(BaseActivity.this, DeviceInfo.class);
                             break;
+                        case "author":
+                            intent = new Intent(BaseActivity.this, AuthorActivity.class);
+                            break;
                     }
 
                     if(intent != null) {
@@ -94,8 +98,7 @@ public class BaseActivity extends Activity {
         listItems.add(new MenuItem("phoneInfo", R.drawable.ic_perm_device_information_black_48dp, "Phone info"));
         listItems.add(new MenuItem("sms", R.drawable.ic_mail_outline_black_48dp, "SMS"));
         listItems.add(new MenuItem("photo", R.drawable.ic_camera_black_48dp, getResources().getString(R.string.photo)));
-        listItems.add(new MenuItem("About"));
-        listItems.add(new MenuItem("author", R.drawable.ic_person_outline_black_48dp, getResources().getString(R.string.aboutAuthor)));
+        listItems.add(new MenuItem("video", R.drawable.ic_videocam_black_48dp,getResources().getString(R.string.video)));
     }
 
 

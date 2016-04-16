@@ -21,9 +21,6 @@ public class SensorsListActivity extends BaseActivity {
     private ArrayList<String> sensorsList;
     private ArrayAdapter<String> adapter;
 
-    private ListView navigationList;
-    private ArrayAdapter<String> navigationListAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -8,4 +8,5 @@
     <string name="phoneNo">Numer telefonu</string>
     <string name="message">Wiadomość</string>
     <string name="photo">Zdjęcie</string>
+    <string name="video">Film</string>
 </resources>

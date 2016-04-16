@@ -21,8 +21,10 @@
         <activity android:name=".device.CameraActivity"></activity>
         <activity android:name=".WebViewActivity"></activity>
         <activity android:name=".device.DeviceInfo"></activity>
+        <activity android:name=".about.AuthorActivity"></activity>
     </application>
 
     <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

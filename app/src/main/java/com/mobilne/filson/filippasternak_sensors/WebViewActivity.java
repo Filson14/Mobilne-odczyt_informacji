@@ -3,6 +3,7 @@ package com.mobilne.filson.filippasternak_sensors;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -27,6 +28,8 @@ public class WebViewActivity extends BaseActivity {
         goBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                webView.setWebViewClient(new WebViewClient());
+                webView.loadUrl("about:blank");
                 webView.loadUrl(urlField.getText().toString());
             }
         });
