@@ -64,18 +64,18 @@ public class DeviceInfo extends BaseActivity {
 
         boolean isRoaming = tm.isNetworkRoaming();
 
-        allInfo.add(new DeviceInfoItem("IMEI Number", IMEINumber));
-        allInfo.add(new DeviceInfoItem("SubscriberID", subscriberID));
-        allInfo.add(new DeviceInfoItem("Sim Serial Number", SIMSerialNumber));
-        allInfo.add(new DeviceInfoItem("Network Country ISO", networkCountryISO));
-        allInfo.add(new DeviceInfoItem("Network Operator Name", networkOperatorName));
-        allInfo.add(new DeviceInfoItem("SIM Country ISO", SIMCountryISO));
-        allInfo.add(new DeviceInfoItem("SIM Operator", SIMOperator));
-        allInfo.add(new DeviceInfoItem("SIM Operator Name", SIMOperatorName));
-        allInfo.add(new DeviceInfoItem("Software Version", softwareVersion));
-        allInfo.add(new DeviceInfoItem("Voice Mail Number", voiceMailNumber));
-        allInfo.add(new DeviceInfoItem("Phone Network Type", strPhoneType));
-        allInfo.add(new DeviceInfoItem("In Roaming? ", isRoaming ? "True" : "False"));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.imeiNo), IMEINumber));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.subscriberId), subscriberID));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.simSerialNo), SIMSerialNumber));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.networkCountryISO), networkCountryISO));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.networkOperatorName), networkOperatorName));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.simCountryISO), SIMCountryISO));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.simOperator), SIMOperator));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.simOperatorName), SIMOperatorName));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.softVersion), softwareVersion));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.voiceMailNo), voiceMailNumber));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.phoneNetType), strPhoneType));
+        allInfo.add(new DeviceInfoItem(getResources().getString(R.string.inRoaming), isRoaming ? getResources().getString(R.string.yes) : getResources().getString(R.string.no)));
 
         adapter.notifyDataSetChanged();
     }

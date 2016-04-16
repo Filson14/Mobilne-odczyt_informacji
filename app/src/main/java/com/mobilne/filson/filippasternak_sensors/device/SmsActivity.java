@@ -49,11 +49,11 @@ public class SmsActivity extends BaseActivity {
                 smsManager.sendTextMessage(number, null, messageParts.get(i), null, null);
             }
 
-            Toast.makeText(getApplicationContext(), "SMS sent.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.smsOK), Toast.LENGTH_LONG).show();
             phoneNoEdit.setText("");
             messageEdit.setText("");
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "SMS failed, please try again.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.smsFailed), Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }

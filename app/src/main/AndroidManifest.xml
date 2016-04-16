@@ -21,6 +21,7 @@
         <activity android:name=".device.CameraActivity"></activity>
         <activity android:name=".WebViewActivity"></activity>
         <activity android:name=".device.DeviceInfo"></activity>
+        <activity android:name=".device.VideoActivity"></activity>
         <activity android:name=".about.AuthorActivity"></activity>
     </application>
 

@@ -2,6 +2,8 @@ package com.mobilne.filson.filippasternak_sensors;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends BaseActivity {
 
@@ -9,9 +11,13 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.applyView(this, R.layout.activity_main);
-//        Intent intent = new Intent(MainActivity.this, SensorsListActivity.class);
-//
-//        startActivity(intent);
+        Button openMenuBtn = (Button) findViewById(R.id.openMenuBtn);
+        openMenuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMenu();
+            }
+        });
 
     }
 

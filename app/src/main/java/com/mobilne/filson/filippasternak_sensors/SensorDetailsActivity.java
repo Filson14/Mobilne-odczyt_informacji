@@ -1,5 +1,6 @@
 package com.mobilne.filson.filippasternak_sensors;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 /**
  * Created by Filson on 2016-03-12.
  */
-public class SensorDetailsActivity extends BaseActivity implements SensorEventListener {
+public class SensorDetailsActivity extends Activity implements SensorEventListener {
 
     private int UPDATE_INTERVAL = 300;
     private Sensor sensor;
@@ -32,7 +33,7 @@ public class SensorDetailsActivity extends BaseActivity implements SensorEventLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.applyView(this, R.layout.sensor_details);
+        setContentView(R.layout.sensor_details);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
@@ -182,19 +183,19 @@ public class SensorDetailsActivity extends BaseActivity implements SensorEventLi
     private void onProximityChange(SensorEvent event) {
         long curTime = System.currentTimeMillis();
         if(curTime - lastUpdate > UPDATE_INTERVAL) {
-            String label = "Proximity: ";
+            String label = getResources().getString(R.string.proximity) + ": ";
             lastUpdate = curTime;
-            valueOneView.setText("Max Range: " + Float.toString(sensor.getMaximumRange()));
+            valueOneView.setText(getResources().getString(R.string.maxRange) + ": " + Float.toString(sensor.getMaximumRange()));
 
-            label += event.values[0] > sensor.getMaximumRange() ? "Far" : "Close";
+            label += event.values[0] > sensor.getMaximumRange() ? getResources().getString(R.string.far) : getResources().getString(R.string.close);
             valueTwoView.setText(label);
 //            valueTwoView.setText("Proximity: " + Float.toString(event.values[0]));
         }
     }
 
     private void onLightChange(SensorEvent event) {
-            valueOneView.setText("Max Range: " + Float.toString(sensor.getMaximumRange()));
-            valueTwoView.setText("Light level: " + event.values[0]);
+            valueOneView.setText(getResources().getString(R.string.maxRange) + ": " + Float.toString(sensor.getMaximumRange()));
+            valueTwoView.setText(getResources().getString(R.string.lightLevel) + ": " + event.values[0]);
     }
 
     private void onOrientationChange(SensorEvent event) {
@@ -211,9 +212,9 @@ public class SensorDetailsActivity extends BaseActivity implements SensorEventLi
 
     private void onRotationVectorChange(SensorEvent event) {
         onThreeAxisSensorChange(event);
-        String accuracy = event.values[4] != -1 ? Float.toString(event.values[4]) : "Unavailable";
+        String accuracy = event.values[4] != -1 ? Float.toString(event.values[4]) : getResources().getString(R.string.unavailable);
         valueFourView.setText("cos(theta/2) = " + event.values[3] + System.getProperty("line.separator") +
-                "Estimated accuracy: " + accuracy);
+                getResources().getString(R.string.estAccuracy) + ": " + accuracy);
     }
 
     private void onThreeAxisSensorChange(SensorEvent event) {

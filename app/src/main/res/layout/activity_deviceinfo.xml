@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Phone info" />
+        android:text="@string/phoneInfo" />
 
     <ListView
         android:layout_width="wrap_content"
